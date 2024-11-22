@@ -21,7 +21,14 @@ function App() {
         <Col>Animal Matching Game</Col>
       </Row>
       <Row>
-        <Col><ResultView /></Col>
+        <Col>
+          <ResultView 
+          setResultValue={setResultValue}
+          animalName={animalName}
+          randomizedAnimal={randomizedAnimal}
+          resultValue={resultValue}
+          />
+        </Col>
         <Col>
           <RandomNamePicker 
             setRandomizedAnimal={setRandomizedAnimal} 

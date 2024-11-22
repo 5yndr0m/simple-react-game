@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { animals } from "../assets/AnimalsDb";
 
-export default function RandomNamePicker({ setRandomizedAnimal, setAnimalName,animalName }) {
+export default function RandomNamePicker({ setRandomizedAnimal, setAnimalName, animalName }) {
   
   useEffect(() => {
     changeOrder();
