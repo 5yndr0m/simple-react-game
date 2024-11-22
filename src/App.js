@@ -4,8 +4,17 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ResultView from './components/resultView';
 import AnimalImages from './components/animalImages';
 import RandomNamePicker from './components/randomNamePicker';
+import { useState, useEffect } from 'react';
+import { animals } from './assets/AnimalsDb';
 
 function App() {
+  
+  const [animalName, setAnimalName] = useState('');
+  const [resultValue, setResultValue] = useState('');
+  const [randomizedAnimal, setRandomizedAnimal] = useState('');
+  
+  
+  
   return (
     <Container>
       <Row>
@@ -13,8 +22,14 @@ function App() {
       </Row>
       <Row>
         <Col><ResultView /></Col>
-        <Col><RandomNamePicker /></Col>
-        <Col><AnimalImages /></Col>
+        <Col>
+          <RandomNamePicker 
+            setRandomizedAnimal={setRandomizedAnimal} 
+            setAnimalName={setAnimalName} 
+            animalName={animalName}
+          />
+        </Col>
+        <Col md={7}><AnimalImages /></Col>
       </Row>
     </Container>
   );
