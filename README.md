@@ -12,6 +12,12 @@ The application utilizes **React**, **React-Bootstrap**, and custom logic to pro
 
 ---
 
+## **ScreenShots**
+![Figure 1](./screenShots/Figure1.png)
+![Figure 2](./screenShots/Figure2.png)
+
+---
+
 ## **Features**
 - Displays a random animal name for each round.
 - A grid of 16 animal images dynamically rendered.
