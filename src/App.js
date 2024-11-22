@@ -11,22 +11,27 @@ function App() {
   
   const [animalName, setAnimalName] = useState('');
   const [resultValue, setResultValue] = useState('');
-  const [randomizedAnimal, setRandomizedAnimal] = useState('');
+  const [randomizedAnimal, setRandomizedAnimal] = useState([]);
+  const [pick, setPick] = useState('');
   
-  
+  const handleClick = (animal) => {
+    setPick(animal);
+  }
   
   return (
     <Container>
       <Row>
-        <Col>Animal Matching Game</Col>
+        <Col>
+          <h1>Animal Matching Game</h1>
+        </Col>
       </Row>
       <Row>
         <Col>
           <ResultView 
           setResultValue={setResultValue}
           animalName={animalName}
-          randomizedAnimal={randomizedAnimal}
           resultValue={resultValue}
+          pick={pick}
           />
         </Col>
         <Col>
@@ -36,7 +41,11 @@ function App() {
             animalName={animalName}
           />
         </Col>
-        <Col md={7}><AnimalImages /></Col>
+        <Col md={6}>
+          <AnimalImages 
+            handleClick={handleClick} 
+          />
+        </Col>
       </Row>
     </Container>
   );

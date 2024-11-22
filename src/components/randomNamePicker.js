@@ -4,7 +4,6 @@ import { animals } from "../assets/AnimalsDb";
 export default function RandomNamePicker({ setRandomizedAnimal, setAnimalName, animalName }) {
   
   useEffect(() => {
-    changeOrder();
     randomize();
   }, []);
   
@@ -15,7 +14,8 @@ export default function RandomNamePicker({ setRandomizedAnimal, setAnimalName, a
   
   const randomize = () => {
     const randomIndex = Math.floor(Math.random() * animals.length);
-    setAnimalName(animals[randomIndex].name)
+    setAnimalName(animals[randomIndex].name);
+    changeOrder();
   }
   
   return (

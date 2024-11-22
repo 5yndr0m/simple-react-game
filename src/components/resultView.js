@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 
 
-export default function ResultView({ setResultValue, animalName, randomizedAnimal,resultValue }) {
+export default function ResultView({ setResultValue, animalName, resultValue, pick }) {
   
-  const handleCompare = () => {
-    const result = randomizedAnimal.filter(animal => animal.name === animalName);
-    setResultValue(result[0].name);
-  }
+  useEffect(() => {
+    if (pick && animalName) {
+      if (pick === animalName) {
+        setResultValue("Win");
+      } else {
+        setResultValue("Lose");
+      }
+    }
+  }, [pick, animalName, setResultValue]);
   
   return (    
     <>
