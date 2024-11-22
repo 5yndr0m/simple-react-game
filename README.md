@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# IT3133-Assignment-4
+# 2020/ICT/19
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# **Animal Matching Game**
 
-In the project directory, you can run:
+## **Project Overview**
+The **Animal Matching Game** is an interactive React application designed to help players, especially children, recognize animals and improve their visual recognition skills. The game randomly displays an animal's name, and the player must click the corresponding image from a grid of options.
 
-### `npm start`
+The application utilizes **React**, **React-Bootstrap**, and custom logic to provide a dynamic and engaging experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **Features**
+- Displays a random animal name for each round.
+- A grid of 16 animal images dynamically rendered.
+- Visual feedback for hover effects on images.
+- Real-time result evaluation (Win or Lose) based on the player's selection.
+- Simple, responsive layout styled using React-Bootstrap.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Technologies Used**
+- **React**: Frontend library for building the UI.
+- **React-Bootstrap**: For responsive design and styling.
+- **JavaScript**: For application logic and interactivity.
+- **CSS**: For custom styles and hover effects.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **Setup Instructions**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+Ensure the following are installed:
+- Node.js (v16+ recommended)
+- npm or yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/5yndr0m/simple-react-game.git
+   cd simple-react-game
+   ```
 
-### `npm run eject`
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Run the Application**:
+   ```bash
+   npm start
+   ```
+   This will start the development server. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Project Structure**:
+   - **`src/components/`**: Contains the reusable components:
+     - `AnimalImages.js`: Displays animal images in a grid.
+     - `ResultView.js`: Shows the game result ("Win" or "Lose").
+     - `RandomNamePicker.js`: Displays the randomly picked animal name.
+   - **`src/assets/AnimalsDb.js`**: Provides the animal data (name and image path).
+   - **`public/fig/`**: Store all animal images here.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **How to Play**
+1. The game starts by displaying the name of a random animal.
+2. A grid of 16 animal images appears below the name.
+3. Hover over an image to highlight it.
+4. Click the image that matches the displayed name.
+5. The result is shown instantly as either "Win" (correct choice) or "Lose" (incorrect choice).
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **Folder Structure**
+```plaintext
+project/
+│
+├── public/
+│   └── fig/
+│       └── <animal images>  # Store your animal images here
+├── src/
+│   ├── assets/
+│   │   └── AnimalsDb.js     # Animal data (name and image path)
+│   ├── components/
+│   │   ├── AnimalImages.js  # Animal grid component
+│   │   ├── ResultView.js    # Result display component
+│   │   └── RandomNamePicker.js  # Random animal name picker
+│   ├── App.js               # Main application logic
+│   ├── App.css              # Custom styles
+│   └── index.js             # React entry point
+└── package.json             # Dependencies and scripts
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## **Customization**
+1. **Animal Database**:
+   Update `AnimalsDb.js` to add or modify animal data:
+   ```javascript
+   const animals = [
+       { name: "Lion", img: "lion.jpg" },
+       { name: "Elephant", img: "elephant.jpg" },
+       ...
+   ];
+   export default animals;
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. **Styling**:
+   Modify `App.css` or component-specific styles for custom layouts and themes.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## **License**
+This project is licensed under the MIT License.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
