@@ -16,7 +16,7 @@ export default function ResultView({ setResultValue, animalName, resultValue, pi
   return (    
     <>
       <h1>Result</h1>
-      <h1>{resultValue}</h1>
+      <h1 style={{ color: resultValue === "Win" ? "green" : "orange" }}>{resultValue}</h1>
     </>
   );
 }

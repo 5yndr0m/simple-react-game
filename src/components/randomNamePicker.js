@@ -13,7 +13,7 @@ export default function RandomNamePicker({ setRandomizedAnimal, setAnimalName, a
   }
   
   const randomize = () => {
-    const randomIndex = Math.floor(Math.random() * animals.length);
+    const randomIndex = Math.floor(Math.random() * 10) + 1;
     setAnimalName(animals[randomIndex].name);
     changeOrder();
   }
@@ -21,7 +21,7 @@ export default function RandomNamePicker({ setRandomizedAnimal, setAnimalName, a
   return (
     <>
       <h1>Animal Name</h1>
-      <h1>{animalName}</h1>
+      <h1 style={{ color: "orange" }}>{animalName}</h1>
     </>
   );
 }
